@@ -48,7 +48,7 @@ $titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one(
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; Your Website 2016</p>
+        <p>Copyright &copy; <?= $titres->titre_cv ?> 2017</p>
     </div>
 </footer>
 
