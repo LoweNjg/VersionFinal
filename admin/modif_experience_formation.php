@@ -2,21 +2,21 @@
 <?php
 
 // Gestion des contenus, mise à jour d'une compétence
-if(isset($_POST['titre_e'])){
-	$titre_e = addslashes($_POST['titre_e']);
-	$sous_titre_e = addslashes($_POST['sous_titre_e']);
-	$dates_e = addslashes($_POST['dates_e']);
-	$description_e = addslashes($_POST['description_e']);
-	$id_experience = $_POST['id_experience'];
-	$pdoCV->exec(" UPDATE t_experiences SET titre_e = '$titre_e', sous_titre_e='$sous_titre_e', dates_e = '$dates_e', description_e = '$description_e' WHERE id_experience='$id_experience' ");
+if(isset($_POST['titre'])){
+	$titre = addslashes($_POST['titre']);
+	$sous_titre = addslashes($_POST['sous_titre']);
+	$dates = addslashes($_POST['dates']);
+	$description = addslashes($_POST['description']);
+	$id_experience_formation = $_POST['id_experience_formation'];
+	$pdoCV->exec(" UPDATE t_experiences_formations SET titre = '$titre', sous_titre='$sous_titre', dates = '$dates', description = '$description' WHERE id_experience_formation='$id_experience_formation' ");
 	header('location: index.php');
 	exit();
 }
 
 // Je recupere les info experience
-$id_experience = $_GET['id_experience']; // par l'id et $_GET
-$sql = $pdoCV->query(" SELECT * FROM t_experiences WHERE id_experience = '$id_experience' "); // la requête égale à l'id
-$ligne_experience = $sql->fetch(); //
+$id_experience_formation = $_GET['id_experience_formation']; // par l'id et $_GET
+$sql = $pdoCV->query(" SELECT * FROM t_experiences_formations WHERE id_experience_formation = '$id_experience_formation' "); // la requête égale à l'id
+$ligne_experience_formation = $sql->fetch(); //
 
 ?>
 <!DOCTYPE html>
@@ -88,18 +88,18 @@ $ligne_experience = $sql->fetch(); //
 			<div class="row">
 				<div class="col-lg-12">
 					<section id="intro" class="intro-section">
-						<form class="form-horizontal" method="post" action="modif_experience.php">
+						<form class="form-horizontal" method="post" action="modif_experience_formation.php">
 							<fieldset>
 
 								<!-- Form Name -->
-								<legend>Modification experience</legend>
+								<legend>Modification experience / formation</legend>
 
 								<!-- Text input-->
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="titre">titre</label>
 									<div class="col-md-4">
-										<input name="titre_e" type="text" class="form-control input-md" value="<?= $ligne_experience['titre_e']; ?>">
-										<input hidden name="id_experience" value="<?= $ligne_experience['id_experience']; ?>">
+										<input name="titre" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['titre']; ?>">
+										<input hidden name="id_experience_formation" value="<?= $ligne_experience_formation['id_experience_formation']; ?>">
 									</div>
 								</div>
 
@@ -107,7 +107,7 @@ $ligne_experience = $sql->fetch(); //
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="sousTitre">sousTitre</label>
 									<div class="col-md-4">
-										<input name="sous_titre_e" type="text" class="form-control input-md" value="<?= $ligne_experience['sous_titre_e']; ?>">
+										<input name="sous_titre" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['sous_titre']; ?>">
 									</div>
 								</div>
 
@@ -115,7 +115,7 @@ $ligne_experience = $sql->fetch(); //
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="date">date</label>
 									<div class="col-md-4">
-										<input name="dates_e" type="text" class="form-control input-md" value="<?= $ligne_experience['dates_e']; ?>">
+										<input name="dates" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['dates']; ?>">
 									</div>
 								</div>
 
@@ -123,9 +123,9 @@ $ligne_experience = $sql->fetch(); //
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="description">description</label>
 									<div class="col-md-4">
-										<input name="description_e" type="text" class="form-control input-md" value="<?= $ligne_experience['description_e']; ?>">
+										<input name="description" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['description']; ?>">
 									</div>
-								</div>
+								</div>_
 
 								<!-- Button -->
 								<div class="form-group">

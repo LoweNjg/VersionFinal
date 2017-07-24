@@ -1,7 +1,7 @@
 <?php
 use Model\Db\DbFactory;
 DbFactory::start();
-$titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one();
+$utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->find_one();
 
  ?>
 
@@ -16,7 +16,7 @@ $titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one(
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $titres->titre_cv ?></title>
+    <title><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?= $this->assetUrl('css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -48,7 +48,7 @@ $titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one(
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; <?= $titres->titre_cv ?> 2017</p>
+        <p>Copyright &copy; </span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?> 2017</p>
     </div>
 </footer>
 

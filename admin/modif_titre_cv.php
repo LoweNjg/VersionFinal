@@ -2,21 +2,20 @@
 <?php
 
 // Gestion des contenus, mise à jour d'une compétence
-if(isset($_POST['titre_f'])){
-	$titre_f = addslashes($_POST['titre_f']);
-	$sous_titre_f = addslashes($_POST['sous_titre_f']);
-	$dates_f = addslashes($_POST['dates_f']);
-	$description_f = addslashes($_POST['description_e']);
-	$id_formation = $_POST['id_formation'];
-	$pdoCV->exec(" UPDATE t_formations SET titre_f = '$titre_f', sous_titre_f='$sous_titre_f', dates_f = '$dates_f', description_f = '$description_f' WHERE id_formation='$id_formation' ");
+if(isset($_POST['titre_cv'])){
+	$titre_cv = addslashes($_POST['titre_cv']);
+	$accroche = addslashes($_POST['accroche']);
+	$logo = addslashes($_POST['logo']);
+	$id_titre_cv = $_POST['id_titre_cv'];
+	$pdoCV->exec(" UPDATE t_titres_cv SET titre_cv = '$titre_cv', accroche='$accroche', logo = '$logo' WHERE id_titre_cv ='$id_titre_cv' ");
 	header('location: index.php');
 	exit();
 }
 
 // Je recupere les info experience
-$id_formation = $_GET['id_formation']; // par l'id et $_GET
-$sql = $pdoCV->query(" SELECT * FROM t_formations WHERE id_formation = '$id_formation' "); // la requête égale à l'id
-$ligne_formation = $sql->fetch(); //
+$id_titre_cv = $_GET['id_titre_cv']; // par l'id et $_GET
+$sql = $pdoCV->query(" SELECT * FROM t_titres_cv WHERE id_titre_cv = '$id_titre_cv' "); // la requête égale à l'id
+$ligne_titre_cv = $sql->fetch(); //
 
 ?>
 <!DOCTYPE html>
@@ -88,42 +87,34 @@ $ligne_formation = $sql->fetch(); //
 			<div class="row">
 				<div class="col-lg-12">
 					<section id="intro" class="intro-section">
-						<form class="form-horizontal" method="post" action="modif_formation.php">
+						<form class="form-horizontal" method="post" action="modif_titre_cv.php">
 							<fieldset>
 
 								<!-- Form Name -->
-								<legend>Modification formation</legend>
+								<legend>Modification titre</legend>
 
 								<!-- Text input-->
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="titre">titre</label>
 									<div class="col-md-4">
-										<input name="titre_f" type="text" class="form-control input-md" value="<?= $ligne_formation['titre_f']; ?>">
-										<input hidden name="id_formation" value="<?= $ligne_formation['id_formation']; ?>">
+										<input name="titre" type="text" class="form-control input-md" value="<?= $ligne_titre_cv['titre_cv']; ?>">
+										<input hidden name="id_titre_cv" value="<?= $ligne_titre_cv['id_titre_cv']; ?>">
 									</div>
 								</div>
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="sousTitre">sousTitre</label>
+									<label class="col-md-4 control-label" for="sousTitre">accroche</label>
 									<div class="col-md-4">
-										<input name="sous_titre_f" type="text" class="form-control input-md" value="<?= $ligne_formation['sous_titre_f']; ?>">
+										<input name="accroche" type="text" class="form-control input-md" value="<?= $ligne_titre_cv['accroche']; ?>">
 									</div>
 								</div>
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="date">date</label>
+									<label class="col-md-4 control-label" for="date">logo</label>
 									<div class="col-md-4">
-										<input name="dates_f" type="text" class="form-control input-md" value="<?= $ligne_formation['dates_f']; ?>">
-									</div>
-								</div>
-
-								<!-- Textarea -->
-								<div class="form-group">
-									<label class="col-md-4 control-label" for="description">description</label>
-									<div class="col-md-4">
-										<input name="description_f" type="text" class="form-control input-md" value="<?= $ligne_formation['description_f']; ?>">
+										<input name="logo" type="text" class="form-control input-md" value="<?= $ligne_titre_cv['logo']; ?>">
 									</div>
 								</div>
 

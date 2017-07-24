@@ -9,7 +9,7 @@
 			Menu <i class="fa fa-bars"></i>
 		</button>
 		<a class="navbar-brand page-scroll" href="#page-top">
-			<i class="fa fa-play-circle"></i> <span class="light"></span><?= $titres->titre_cv ?>
+			<i class="fa fa-play-circle"></i> <span class="light"></span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?>
 		</a>
 	</div>
 
@@ -48,7 +48,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h1 class="brand-heading"><?= $titres->titre_cv ?></h1>
+				<h1 class="brand-heading"><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?></h1>
 				<p class="intro-text"><?= $titres->accroche ?></p>
 					<a href="#competences" class="btn btn-circle page-scroll">
 						<i class="fa fa-angle-double-down animated"></i>
@@ -70,12 +70,10 @@
 			</div>
 			<div class="bars">
 				<ul class="skills">
-					<li><span class="bar-expand photoshop"></span><em>Photoshop</em></li>
-					<li><span class="bar-expand illustrator"></span><em>Illustrator</em></li>
-					<li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
-					<li><span class="bar-expand css"></span><em>CSS</em></li>
-					<li><span class="bar-expand html5"></span><em>HTML5</em></li>
-					<li><span class="bar-expand jquery"></span><em>jQuery</em></li>
+					<?php var_dump($competences) ?>
+					<?php foreach ($competences as $competence):?>
+					<li><span class="bar-expand <?= $competence->competence?>" style="width:<?= $competence->niveau?>%;"></span><em><?= $competence->competence?></em></li>
+					<?php endforeach; ?>
 				</ul>
 
 			</div><!-- end skill-bars -->
@@ -96,14 +94,15 @@
 			<div class="col-lg-12">
 				<section class="timeline">
 					<ul>
-						<?php foreach ($formations as $formation): ?>
+						<?php foreach ($expererienceFormation as $eF): ?>
 						<li>
 							<div>
-								<time class="text-uppercase"><?= $formation->date_f ?></time>
-								<h4 class="subheading"><?= $formation->titre_f ?></h4>
-								<p class="text-muted"><p><?= $formation->description_f ?></p>
+								<time class="text-uppercase"><?= $eF->dates ?></time>
+								<h4 class="subheading"><?= $eF->intitule ?></h4>
+								<h4 class="subheading"><?= $eF->localisation ?></h4>
+								<p class="text-muted"><p><?= $eF->description ?></p>
 							</p>
-							<span><?= $formation->sous_titre_f ?></span>
+							<span><?= $eF->sous_titre ?></span>
 						</div>
 					</li>
 					<?php endforeach; ?>
@@ -145,22 +144,48 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="container content-section text-center">
-<div class="row">
-<div class="col-lg-8 col-lg-offset-2">
-	<h2>Contact <?= $titres->titre_cv ?></h2>
-	<p>A faire</p>
-	<p><a href="mailto:cedricnjonang@hotmail.fr">cedricnjonang@hotmail.fr</a>
-	</p>
-	<ul class="list-inline banner-social-buttons">
-		<li>
-			<a href="https://github.com/LoweNjg" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-		</li>
-		<li>
-			<a href="https://www.linkedin.com/in/cedricnjonang/" class="btn btn-default btn-lg"><i class="fa fa-linkedin-square fa-fw"></i> <span class="network-name">LinkedIn</span></a>
-		</li>
-	</ul>
-</div>
-</div>
-</section>
+    <section id="contact" class="container content-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">CONTACT</h2>
+                    <h3 class="section-subheading text-muted">Mon profil vous interrese ? n'hesite pas a me contacter !</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
 <?php $this->stop('main_content') ?>

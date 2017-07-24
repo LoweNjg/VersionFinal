@@ -14,11 +14,12 @@ class DefaultController extends Controller
 	public function home()
 	{
 		DbFactory::start();
-		$utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->find_result_set();
-		$loisir = \ORM::for_table('t_loisirs')->where('utilisateur_id','1')->find_result_set();
+		$utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->find_one();
+		$loisirs = \ORM::for_table('t_loisirs')->where('utilisateur_id','1')->find_result_set();
+		$competences = \ORM::for_table('t_competences')->where('utilisateur_id','1')->find_result_set();
 		$titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one();
-		$formations = \ORM::for_table('t_formations')->where('utilisateur_id','1')->find_result_set();
-		$this->show('default/home',['utilisateurs' => $utilisateurs, 'titres' => $titres, 'formations'=> $formations]);
+		$expererienceFormation = \ORM::for_table('t_experiences_formations')->where('utilisateur_id','1')->find_result_set();
+		$this->show('default/home',['utilisateurs' => $utilisateurs, 'titres' => $titres, 'expererienceFormation'=> $expererienceFormation, 'competences'=>$competences]);
 	}
 
 }
