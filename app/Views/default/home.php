@@ -70,7 +70,6 @@
 			</div>
 			<div class="bars">
 				<ul class="skills">
-					<?php var_dump($competences) ?>
 					<?php foreach ($competences as $competence):?>
 					<li><span class="bar-expand <?= $competence->competence?>" style="width:<?= $competence->niveau?>%;"></span><em><?= $competence->competence?></em></li>
 					<?php endforeach; ?>
