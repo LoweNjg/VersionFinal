@@ -42,13 +42,14 @@ if (isset($_POST['loisir'])) {
     }
 
 }
-if (isset($_POST['titre'])) {
-    if ($_POST['titre']!=null) {
-        $titre = addslashes($_POST['titre']);
-        $sous_titre = addslashes($_POST['sous_titre']);
+if (isset($_POST['type'])) {
+    if ($_POST['type']!=null) {
+        $type = addslashes($_POST['type']);
         $dates = addslashes($_POST['dates']);
+        $intitule = addslashes($_POST['intitule']);
+        $localisation = addslashes($_POST['localisation']);
         $description = addslashes($_POST['description']);
-        $pdoCV->exec("INSERT INTO t_experiences_formations VALUES ( NULL, '$titre','$sous_titre','$dates','$description', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
+        $pdoCV->exec("INSERT INTO t_experiences_formations VALUES ( NULL, '$type','$dates','$intitule','$localisation', '$description', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
         header("location: index.php");
         exit();
     }
@@ -264,7 +265,6 @@ if (isset($_GET['id_realisation'])) {
 
             </fieldset>
         </form>
-        <a class="btn btn-default page-scroll" href="#about">Click Me to Scroll Down!</a>
     </section>
 
 
@@ -350,18 +350,20 @@ if (isset($_GET['id_realisation'])) {
             ?>
             <tbody>
                 <tr>
-                    <th scope="col">titre</th>
-                    <th scope="col">Sous-titre</th>
-                    <th scope="col">date</th>
-                    <th scope="col">description</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Intitule</th>
+                    <th scope="col">localisation</th>
+                    <th scope="col">Description</th>
                     <th scope="col">Modifier</th>
                     <th scope="col">Supprimer</th>
                 </tr>
                 <?php foreach ($allExperienceFormation as $experienceFormation) :?>
                     <tr>
-                        <td><?=$experienceFormation['titre']?></td>
-                        <td><?=$experienceFormation['sous_titre']?></td>
+                        <td><?=$experienceFormation['type']?></td>
                         <td><?=$experienceFormation['dates']?></td>
+                        <td><?=$experienceFormation['intitule']?></td>
+                        <td><?=$experienceFormation['localisation']?></td>
                         <td><?=$experienceFormation['description']?></td>
                         <td><a href="modif_experience_formation.php?id_experience_formation=<?= $experienceFormation['id_experience_formation']?>"><span class="glyphicon glyphicon-pencil" ></span></a></td>
                         <td><a class="supr" href="index.php?id_experience_formation=<?= $experienceFormation['id_experience_formation']?>"><span class="glyphicon glyphicon-trash" ></span></a></td>
@@ -375,27 +377,37 @@ if (isset($_GET['id_realisation'])) {
                 <!-- Form Name -->
                 <legend>Ajouter une experience / formation</legend>
 
+
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="selectbasic">Type</label>
+                    <div class="col-md-4">
+                        <select id="type" name="type" class="form-control">
+                            <option value="experience">Experience</option>
+                            <option value="formation">Formation</option>
+                          </select>
+                        </div>
+                      </div>
+
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="titre">titre</label>
+                    <label class="col-md-4 control-label" for="date">Dates</label>
                     <div class="col-md-4">
-                        <input id="titre" name="titre" type="text" placeholder="titre" class="form-control input-md">
+                        <input id="dates" name="dates" type="text" placeholder="dates" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="intitule">intitule</label>
+                    <div class="col-md-4">
+                        <input id="intitule" name="intitule" type="text" placeholder="intitule" class="form-control input-md">
                     </div>
                 </div>
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="sousTitre">sousTitre</label>
+                    <label class="col-md-4 control-label" for="localisation">localisation</label>
                     <div class="col-md-4">
-                        <input id="sous_titre" name="sous_titre" type="text" placeholder="sous-titre" class="form-control input-md">
-                    </div>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="date">date</label>
-                    <div class="col-md-4">
-                        <input id="dates" name="dates" type="text" placeholder="date" class="form-control input-md">
+                        <input id="localisation" name="localisation" type="text" placeholder="localisation" class="form-control input-md">
                     </div>
                 </div>
 

@@ -2,13 +2,14 @@
 <?php
 
 // Gestion des contenus, mise à jour d'une compétence
-if(isset($_POST['titre'])){
-	$titre = addslashes($_POST['titre']);
-	$sous_titre = addslashes($_POST['sous_titre']);
+if(isset($_POST['type'])){
+	$titre = addslashes($_POST['type']);
 	$dates = addslashes($_POST['dates']);
+	$intitule = addslashes($_POST['intitule']);
+	$localisation = addslashes($_POST['localisation']);
 	$description = addslashes($_POST['description']);
 	$id_experience_formation = $_POST['id_experience_formation'];
-	$pdoCV->exec(" UPDATE t_experiences_formations SET titre = '$titre', sous_titre='$sous_titre', dates = '$dates', description = '$description' WHERE id_experience_formation='$id_experience_formation' ");
+	$pdoCV->exec(" UPDATE t_experiences_formations SET type = '$type', dates ='$dates', intitule = '$intitule', localisation='$localisation' description = '$description' WHERE id_experience_formation='$id_experience_formation' ");
 	header('location: index.php');
 	exit();
 }
@@ -96,26 +97,34 @@ $ligne_experience_formation = $sql->fetch(); //
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="titre">titre</label>
+									<label class="col-md-4 control-label" for="titre">type</label>
 									<div class="col-md-4">
-										<input name="titre" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['titre']; ?>">
+										<input name="type" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['type']; ?>">
 										<input hidden name="id_experience_formation" value="<?= $ligne_experience_formation['id_experience_formation']; ?>">
 									</div>
 								</div>
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="sousTitre">sousTitre</label>
+									<label class="col-md-4 control-label" for="dates">dates</label>
 									<div class="col-md-4">
-										<input name="sous_titre" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['sous_titre']; ?>">
+										<input name="dates" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['dates']; ?>">
 									</div>
 								</div>
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="date">date</label>
+									<label class="col-md-4 control-label" for="intitule">intitule</label>
 									<div class="col-md-4">
-										<input name="dates" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['dates']; ?>">
+										<input name="intitule" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['intitule']; ?>">
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="localisation">localisation</label>
+									<div class="col-md-4">
+										<input name="localisation" type="text" class="form-control input-md" value="<?= $ligne_experience_formation['localisation']; ?>">
 									</div>
 								</div>
 
