@@ -27,6 +27,9 @@
 				<a class="page-scroll" href="#formations">FORMATIONS</a>
 			</li>
 			<li>
+				<a class="page-scroll" href="#portefolio">PORTEFOLIO</a>
+			</li>
+			<li>
 				<a class="page-scroll" href="#loisir">LOISIRS</a>
 			</li>
 			<li>
@@ -112,6 +115,108 @@
 </div>
 </section>
 
+<!-- Portefolio selection -->
+
+<section id="portefolio" class="content-section text-center">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 text-center">
+	                    <h2 class="section-heading">Portfolio</h2>
+	                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Round Icons</h4>
+	                        <p class="text-muted">Graphic Design</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Startup Framework</h4>
+	                        <p class="text-muted">Website Design</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Treehouse</h4>
+	                        <p class="text-muted">Website Design</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Golden</h4>
+	                        <p class="text-muted">Website Design</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Escape</h4>
+	                        <p class="text-muted">Website Design</p>
+	                    </div>
+	                </div>
+	                <div class="col-md-4 col-sm-6 portfolio-item">
+	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+	                        <div class="portfolio-hover">
+	                            <div class="portfolio-hover-content">
+	                                <i class="fa fa-plus fa-3x"></i>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
+	                    </a>
+	                    <div class="portfolio-caption">
+	                        <h4>Dreams</h4>
+	                        <p class="text-muted">Website Design</p>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+</section>
+
+
+
+
 <!-- Experience selection -->
 
 <section id="loisir" class="content-section text-center">
@@ -143,48 +248,59 @@
 </section>
 
 <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">CONTACT</h2>
-                    <h3 class="section-subheading text-muted">Mon profil vous interrese ? n'hesite pas a me contacter !</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section><br>
+   <section id="contact" class="content-section text-center">
+	   <div class="container">
+		   <div class="row">
+			   <div class="col-lg-12 text-center">
+				   <h2>Me Contacter</h2>
+				   <hr class="star-primary">
+			   </div>
+		   </div>
+		   <div class="row">
+			   <div class="col-lg-8 col-lg-offset-2">
+				   <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
+				   <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
+				   <form name="sentMessage" id="contactForm" novalidate>
+					   <div class="row control-group">
+						   <div class="form-group col-xs-12 floating-label-form-group controls">
+							   <label for="name">Nom</label>
+							   <input type="text" class="form-control" placeholder="Nom" id="name" required data-validation-required-message="Please enter your name.">
+							   <p class="help-block text-danger"></p>
+						   </div>
+					   </div>
+					   <div class="row control-group">
+						   <div class="form-group col-xs-12 floating-label-form-group controls">
+							   <label for="email">Email</label>
+							   <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Please enter your email address.">
+							   <p class="help-block text-danger"></p>
+						   </div>
+					   </div>
+					   <div class="row control-group">
+						   <div class="form-group col-xs-12 floating-label-form-group controls">
+							   <label for="phone">Numero de telephone</label>
+							   <input type="tel" class="form-control" placeholder="Numero de telephone" id="phone" required data-validation-required-message="Please enter your phone number.">
+							   <p class="help-block text-danger"></p>
+						   </div>
+					   </div>
+					   <div class="row control-group">
+						   <div class="form-group col-xs-12 floating-label-form-group controls">
+							   <label for="message">Message</label>
+							   <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+							   <p class="help-block text-danger"></p>
+						   </div>
+					   </div>
+					   <br>
+					   <div id="success"></div>
+					   <div class="row">
+						   <div class="form-group col-xs-12">
+							   <button type="submit" class="btn btn-success btn-lg">Envoyer</button>
+						   </div>
+					   </div>
+				   </form>
+			   </div>
+		   </div>
+	   </div>
+   </section>
+
 
 <?php $this->stop('main_content') ?>
