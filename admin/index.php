@@ -27,7 +27,8 @@ if(isset($_GET['quitter'])){
 if (isset($_POST['competence'])) {
     if ($_POST['competence']!=null) {
         $competence = addslashes($_POST['competence']);
-        $pdoCV->exec("INSERT INTO t_competences VALUES ( NULL, '$competence', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
+        $niveau = addslashes($_POST['niveau']);
+        $pdoCV->exec("INSERT INTO t_competences VALUES ( NULL, '$competence','$niveau', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
         header("location: index.php");
         exit();
     }
@@ -226,12 +227,14 @@ if (isset($_GET['id_realisation'])) {
                         <tbody>
                             <tr>
                                 <th scope="col">compétences</th>
+                                <th scope="col">niveau</th>
                                 <th scope="col">Modifier</th>
                                 <th scope="col">Supprimer</th>
                             </tr>
                             <?php foreach ($allCompetence as $competence) :?>
                                 <tr>
                                     <td><?=$competence['competence']?></td>
+                                    <td><?=$competence['niveau']?></td>
                                     <td><a href="modif_competence.php?id_competence=<?= $competence['id_competence']?>"><span class="glyphicon glyphicon-pencil" ></span></a></td>
                                     <td><a class="supr" href="index.php?id_competence=<?= $competence['id_competence']?>"><span class="glyphicon glyphicon-trash" ></span></a></td>
                                 </tr>
@@ -252,6 +255,13 @@ if (isset($_GET['id_realisation'])) {
                     <div class="col-md-4">
                         <input id="competence" name="competence" type="text" placeholder="competence" class="form-control input-md" required="">
 
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="niveau">niveau</label>
+                    <div class="col-md-4">
+                        <input id="niveau" name="niveau" type="text" placeholder="1 à 100" class="form-control input-md" required="">
                     </div>
                 </div>
 
