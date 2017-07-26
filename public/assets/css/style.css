@@ -217,3 +217,109 @@ time {
 	div.form-group{
 		font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
+    #portfolio .portfolio-item .portfolio-link .caption {
+    background: rgba(24,188,156,.9);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+}
+#portfolio .portfolio-item .portfolio-link .caption:hover {
+    opacity: 1;
+}
+
+#interets .section-heading {
+	color: #242F45;
+}
+.logo-loisir p {
+	font-size: 1.1em;
+	font-family: 'Overlock', arial, sans-serif;
+}
+
+.logo-loisir img {
+	margin: 25px 18px;
+}
+
+#langues {
+	margin-top: 35px;
+}
+	#langues h4 {
+		font-family: 'Amatic SC', arial, sans-serif;
+		font-size: 2.8em;
+	}
+
+.langues p{
+	font-family: 'Overlock', arial, sans-serif;
+	font-size: 1.1em;
+}
+
+/*     Section       */
+
+#realisations {
+	padding: 120px 0;
+	background: #f6f6f6;
+}
+
+.portfolio-item {
+	margin-bottom: 30px;
+}
+.portfolio-item .hover-bg {
+	max-height: 190px;
+	overflow: hidden;
+	position: relative;
+}
+.hover-bg .hover-text {
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	color: rgba(255,255,255,0.6);
+	background: rgba(0, 0, 0, 0.66);
+	padding: 25% 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: all 0.5s;
+}
+.hover-bg .hover-text>h4 {
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition: all 0.3s;
+	color: #f6f6f6;
+}
+.hover-bg:hover .hover-text>h4 {
+	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.hover-bg .hover-text>p {
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition: all 0.3s;
+}
+.hover-bg:hover .hover-text>p {
+	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+.hover-bg .hover-text>i {
+	opacity: 0;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+	transition: all 0.3s;
+}
+.hover-bg:hover .hover-text>i {
+	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+}
+.hover-bg:hover .hover-text {
+	opacity: 1;
+}

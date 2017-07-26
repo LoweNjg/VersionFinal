@@ -7,7 +7,7 @@ if(isset($_POST['titre_cv'])){
 	$accroche = addslashes($_POST['accroche']);
 	$logo = addslashes($_POST['logo']);
 	$id_titre_cv = $_POST['id_titre_cv'];
-	$pdoCV->exec(" UPDATE t_titres_cv SET titre_cv = '$titre_cv', accroche='$accroche', logo = '$logo' WHERE id_titre_cv ='$id_titre_cv' ");
+	$pdoCV->exec(" UPDATE t_titres_cv SET titre_cv='$titre_cv', accroche='$accroche', logo = '$logo' WHERE id_titre_cv ='$id_titre_cv' ");
 	header('location: index.php');
 	exit();
 }
@@ -97,7 +97,7 @@ $ligne_titre_cv = $sql->fetch(); //
 								<div class="form-group">
 									<label class="col-md-4 control-label" for="titre">titre</label>
 									<div class="col-md-4">
-										<input name="titre" type="text" class="form-control input-md" value="<?= $ligne_titre_cv['titre_cv']; ?>">
+										<input name="titre_cv" type="text" class="form-control input-md" value="<?= $ligne_titre_cv['titre_cv']; ?>">
 										<input hidden name="id_titre_cv" value="<?= $ligne_titre_cv['id_titre_cv']; ?>">
 									</div>
 								</div>

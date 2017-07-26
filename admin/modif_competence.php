@@ -4,8 +4,9 @@
 // Gestion des contenus, mise à jour d'une compétence
 if(isset($_POST['competence'])){
 	$competence = addslashes($_POST['competence']);
+	$niveau = addslashes($_POST['niveau']);
 	$id_competence = $_POST['id_competence'];
-	$pdoCV->exec(" UPDATE t_competences SET competence='$competence' WHERE id_competence='$id_competence' ");
+	$pdoCV->exec(" UPDATE t_competences SET competence='$competence', niveau='$niveau' WHERE id_competence='$id_competence' ");
 	header('location: index.php');
 	exit();
 }
@@ -97,6 +98,14 @@ $ligne_competence = $sql->fetch(); //
 									<div class="col-md-4">
 										<input name="competence" type="text" class="form-control input-md" value="<?= $ligne_competence['competence']; ?>">
 										<input name="id_competence" hidden value="<?= $ligne_competence['id_competence']; ?>">
+									</div>
+								</div>
+
+								<!-- Text input-->
+								<div class="form-group">
+									<label class="col-md-4 control-label" for="intitule">niveau</label>
+									<div class="col-md-4">
+										<input name="niveau" type="text" class="form-control input-md" value="<?= $ligne_competence['niveau']; ?>">
 									</div>
 								</div>
 

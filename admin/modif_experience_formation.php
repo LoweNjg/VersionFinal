@@ -9,7 +9,7 @@ if(isset($_POST['type'])){
 	$localisation = addslashes($_POST['localisation']);
 	$description = addslashes($_POST['description']);
 	$id_experience_formation = $_POST['id_experience_formation'];
-	$pdoCV->exec(" UPDATE t_experiences_formations SET type = '$type', dates ='$dates', intitule = '$intitule', localisation='$localisation' description = '$description' WHERE id_experience_formation='$id_experience_formation' ");
+	$pdoCV->exec(" UPDATE t_experiences_formations SET type = '$type', dates ='$dates', intitule = '$intitule', localisation='$localisation',description = '$description' WHERE id_experience_formation='$id_experience_formation' ");
 	header('location: index.php');
 	exit();
 }
