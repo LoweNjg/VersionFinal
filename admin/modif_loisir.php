@@ -3,9 +3,10 @@
 
 // Gestion des contenus, mise à jour d'une compétence
 if(isset($_POST['loisir'])){
+	$intitule = addslashes($_POST['intitule']);
 	$loisir = addslashes($_POST['loisir']);
 	$id_loisir = $_POST['id_loisir'];
-	$pdoCV->exec(" UPDATE t_loisirs SET loisir='$loisir' WHERE id_loisir='$id_loisir' ");
+	$pdoCV->exec(" UPDATE t_loisirs SET intitule='$intitule',loisir='$loisir' WHERE id_loisir='$id_loisir' ");
 	header('location: index.php');
 	exit();
 }
@@ -93,10 +94,17 @@ $ligne_loisir = $sql->fetch(); //
 
 								<!-- Text input-->
 								<div class="form-group">
+									<label for="intitule" class="col-md-4 control-label" >intitule</label>
+									<div class="col-md-4">
+										<input name="intitule" type="text" class="form-control input-md" value="<?= $ligne_loisir['intitule']; ?>">
+										<input name="id_loisir" hidden value="<?= $ligne_loisir['id_loisir']; ?>">
+									</div>
+								</div>
+								<!-- Text input-->
+								<div class="form-group">
 									<label for="loisir" class="col-md-4 control-label" >loisir</label>
 									<div class="col-md-4">
 										<input name="loisir" type="text" class="form-control input-md" value="<?= $ligne_loisir['loisir']; ?>">
-										<input name="id_loisir" hidden value="<?= $ligne_loisir['id_loisir']; ?>">
 									</div>
 								</div>
 

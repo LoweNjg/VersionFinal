@@ -36,8 +36,10 @@ if (isset($_POST['competence'])) {
 }
 if (isset($_POST['loisir'])) {
     if ($_POST['loisir']!=null) {
+        $intitule = addslashes($_POST['intitule']);
         $loisir = addslashes($_POST['loisir']);
-        $pdoCV->exec("INSERT INTO t_loisirs VALUES ( NULL, '$loisir', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
+        $photo = addslashes($_POST['photo']);
+        $pdoCV->exec("INSERT INTO t_loisirs VALUES ( NULL, '$intitule','$loisir','$photo', '$connecter')");// mettre $id_utilisateur quand on l'aura en variable de SessionHandler
         header("location: index.php");
         exit();
     }
@@ -297,13 +299,17 @@ if (isset($_GET['id_realisation'])) {
                         ?>
                         <tbody>
                             <tr>
+                                <th scope="col">intitule</th>
                                 <th scope="col">loisirs</th>
+                                <th scope="col">photo</th>
                                 <th scope="col">Modifier</th>
                                 <th scope="col">Supprimer</th>
                             </tr>
                             <?php foreach ($allLoisir as $loisir) :?>
                                 <tr>
+                                    <td><?=$loisir['intitule']?></td>
                                     <td><?=$loisir['loisir']?></td>
+                                    <td><?=$loisir['photo']?></td>
                                     <td><a href="modif_loisir.php?id_loisir=<?= $loisir['id_loisir']?>"><span class="glyphicon glyphicon-pencil" ></span></a></td>
                                     <td><a class="supr" href="index.php?id_loisir=<?= $loisir['id_loisir']?>"><span class="glyphicon glyphicon-trash" ></span></a></td>
                                 </tr>
@@ -316,9 +322,25 @@ if (isset($_GET['id_realisation'])) {
 
                             <!-- Text input-->
                             <div class="form-group">
+                                <label class="col-md-4 control-label" for="intitule">intitule</label>
+                                <div class="col-md-4">
+                                    <input id="intitule" name="intitule" type="text" placeholder="intitule" class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label" for="loisir">loisir</label>
                                 <div class="col-md-4">
                                     <input id="loisir" name="loisir" type="text" placeholder="loisir" class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="photo">photo</label>
+                                <div class="col-md-4">
+                                    <input id="photo" name="photo" type="text" placeholder="photo" class="form-control input-md" required="">
 
                                 </div>
                             </div>

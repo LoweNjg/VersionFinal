@@ -20,7 +20,7 @@ class DefaultController extends Controller
 		$realisation = \ORM::for_table('t_realisations')->where('utilisateur_id','1')->find_result_set();
 		$titres = \ORM::for_table('t_titres_cv')->where('utilisateur_id','1')->find_one();
 		$expererienceFormation = \ORM::for_table('t_experiences_formations')->where('utilisateur_id','1')->find_result_set();
-		$this->show('default/home',['utilisateurs' => $utilisateurs, 'titres' => $titres, 'expererienceFormation'=> $expererienceFormation, 'competences'=>$competences, 'realisation'=>$realisation]);
+		$this->show('default/home',['utilisateurs' => $utilisateurs, 'titres' => $titres, 'expererienceFormation'=> $expererienceFormation, 'competences'=>$competences, 'realisation'=>$realisation, 'loisirs'=>$loisirs]);
 	}
 
 }

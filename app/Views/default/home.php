@@ -146,24 +146,8 @@
     <div class="section-title text-center center">
       <h2>Mes réalisations</h2>
     </div>
-
-    <div class="row">
-      <div class="portfolio-items">
-                  <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 lorem">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href=<?= $this->assetUrl('img/sitecv.jpg');?> title="Project description" rel="prettyPhoto">
-              <div class="hover-text">
-                <h4>Mon site CV</h4>
-                <p><p><br /></p>
-</p>
-              </div>
-              <img src="<?= $this->assetUrl('img/sitecv.jpg');?>" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        </div>
-</div>
-</div>
-</div>
+		<h4>En construction</h4>
+	</div>
 
 <!-- Experience selection -->
 
@@ -172,31 +156,18 @@
 		<div class="container">
 			<div class="col-lg-8 col-lg-offset-2">
 				<h2>Mes loisirs</h2>
+
 				<div class="loisirs">
 					<div class="row">
 						<div class="col-md-12">
 							<div class="logo-loisir text-center">
+								<?php foreach ($loisirs as $loisir):?>
 								<div class="col-md-offset-1 col-md-2">
-									<img src="front/img/logos/html.png" alt="logo code" width="70">
-									<p>Coder et me mettre à jour sur les nouvelles technologies et nouveaux langages web.</p>
+									<img src="<?= $loisir->photo ?>" alt="<?= $loisir->intitule ?>" width="70">
+									<p><?= $loisir->intitule ?></p><hr>
+									<p><?= $loisir->loisir ?></p>
 								</div>
-								<div class="col-md-2">
-									<img src="front/img/logos/music.png" alt="logo guitare" width="70">
-									<p>Guitare, piano, batterie... Je ne peux pas vivre sans musique !</p>
-								</div>
-								<div class="col-md-2">
-									<img src="front/img/logos/cat.png" alt="logo chat" width="70">
-									<p>Mon chat, toujours à mes côtés quand je tr
-										availle !</p>
-								</div>
-								<div class="col-md-2">
-									<img src="front/img/logos/travel.png" alt="logo voyage" width="70">
-									<p>Pérou, République-Tchèque, Ecosse, Angleterre, Italie... Voyager c'est se former sa propre bibliothèque.</p>
-								</div>
-								<div class="col-md-2">
-									<img src="front/img/logos/telescope.png" alt="logo telescope" width="70">
-									<p>Observer l'infiniment grand et voyager entre les constellations à travers mon télescope...</p>
-								</div>
+							<?php endforeach;?>
 							</div>
 						</div>
 					</div>
@@ -213,7 +184,7 @@
 			<div class="col-lg-8 col-lg-offset-2">
 				<h2>Mon CV papier</h2>
 				<p>Pour télécharger mon CV</p>
-				<a href="https://www.linkedin.com/in/cedricnjonang/" class="btn btn-default btn-lg"></a>
+				<a href="<?php $this->assetUrl('telecharger/cedriccv.pdf');?>" class="btn btn-default btn-lg">Télécharger</a>
 			</div>
 		</div>
 	</div>

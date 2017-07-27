@@ -48,7 +48,7 @@ $utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; </span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?> 2017</p>
+        <p></span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?> - 2017</p>
     </div>
 </footer>
 
