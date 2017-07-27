@@ -9,7 +9,7 @@
 				Menu <i class="fa fa-bars"></i>
 			</button>
 			<a class="navbar-brand page-scroll" href="#page-top">
-				<i class="fa fa-play-circle"></i> <span class="light"></span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?>
+				<i class="fa fa-handshake-o "></i> <span class="light"></span><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?>
 			</a>
 		</div>
 
@@ -21,13 +21,13 @@
 					<a href="#page-top"></a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#competences">COMPETENCES</a>
+					<a class="page-scroll" href="#competences">COMPÉTENCES</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#formations">FORMATIONS</a>
 				</li>
 				<li>
-					<a class="page-scroll" href="#realisation">REALISATION</a>
+					<a class="page-scroll" href="#realisation">RÉALISATION</a>
 				</li>
 				<li>
 					<a class="page-scroll" href="#loisir">LOISIRS</a>
@@ -54,7 +54,7 @@
 					<h1 class="brand-heading"><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?></h1>
 					<p class="intro-text"><?= $titres->accroche ?></p>
 					<a href="#competences" class="btn btn-circle page-scroll">
-						<i class="fa fa-angle-double-down animated"></i>
+						<i class="fa fa-arrow-down animated"></i>
 					</a>
 				</div>
 
@@ -203,7 +203,7 @@
 			<div class="col-lg-8 col-lg-offset-2">
 				<!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
 				<!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-				<form name="sentMessage" id="contactForm" novalidate>
+				<form name="sentMessage" id="contactForm" method="post">
 					<div class="row control-group">
 						<div class="form-group col-xs-12 floating-label-form-group controls">
 							<label for="name">Nom</label>

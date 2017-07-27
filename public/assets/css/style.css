@@ -323,3 +323,26 @@ time {
 .hover-bg:hover .hover-text {
 	opacity: 1;
 }
+
+
+/*//////////////////////////   BACKGROUND ANIME  /////////////////////////*/
+
+
+
+#spaceTravel{
+  position: fixed;
+}
+.blockout{
+  width:100vw;
+  height: 150vh;
+  position: absolute;
+  z-index: -1;
+}
+.pictureBack{
+  background-image: url('');
+  height: 150vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center bottom;
+  position: absolute;
+}

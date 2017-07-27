@@ -22,7 +22,7 @@ $utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->
     <link href="<?= $this->assetUrl('css/bootstrap.min.css'); ?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?= $this->assetUrl('css/font-awesome.min.css'); ?>" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
@@ -69,6 +69,7 @@ $utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->
 <!-- Theme JavaScript -->
 <script src="<?= $this->assetUrl('js/grayscale.min.js'); ?>"></script>
 <script src="<?= $this->assetUrl('js/timeline.js'); ?>"></script>
+
 
 </body>
 
