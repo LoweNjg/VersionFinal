@@ -445,7 +445,7 @@ if (isset($_GET['id_realisation'])) {
 
                 <!-- Textarea -->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="description">description</label>
+                    <label class="col-md-4 control-label" for="description">Description</label>
                     <div class="col-md-4">
                         <textarea class="form-control" id="description" name="description"></textarea>
                         <script>

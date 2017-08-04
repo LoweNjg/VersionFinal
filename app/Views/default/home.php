@@ -53,6 +53,8 @@
 				<div class="col-md-8 col-md-offset-2">
 					<h1 class="brand-heading"><?= $utilisateurs->prenom.' '.$utilisateurs->nom ?></h1>
 					<p class="intro-text"><?= $titres->accroche ?></p>
+						<a href="https://github.com/LoweNjg" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i></a>
+						<a href="https://www.linkedin.com/in/cedricnjonang/" class="btn btn-default btn-lg"><i class="fa fa-linkedin-square fa-fw"></i></a><br><br>
 					<a href="#competences" class="btn btn-circle page-scroll">
 						<i class="fa fa-arrow-down animated"></i>
 					</a>
@@ -69,7 +71,7 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<div class="three columns header-col">
-				<h1><span>COMPETENCES</span></h1>
+				<h1><span>COMPÉTENCES</span></h1>
 			</div>
 			<div class="bars">
 				<ul class="skills">
@@ -184,7 +186,7 @@
 			<div class="col-lg-8 col-lg-offset-2">
 				<h2>Mon CV papier</h2>
 				<p>Pour télécharger mon CV</p>
-				<a href="<?php $this->assetUrl('telecharger/cedriccv.pdf');?>" class="btn btn-default btn-lg">Télécharger</a>
+				<a href="<?= $this->assetUrl('fichier/cedricCV.pdf');?>" class="btn btn-default btn-lg" download>Télécharger</a>
 			</div>
 		</div>
 	</div>
@@ -239,7 +241,9 @@
 							<button type="submit" class="btn btn-success btn-lg">Envoyer</button>
 						</div>
 					</div>
-				</form>
+				</form><br><br>
+				<a href="https://github.com/LoweNjg" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i></a>
+				<a href="https://www.linkedin.com/in/cedricnjonang/" class="btn btn-default btn-lg"><i class="fa fa-linkedin-square fa-fw"></i></a><br><br>
 			</div>
 		</div>
 	</div>

@@ -94,7 +94,7 @@ $ligne_competence = $sql->fetch(); //
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label for="loisir" class="col-md-4 control-label" >loisir</label>
+									<label for="loisir" class="col-md-4 control-label" >Loisir</label>
 									<div class="col-md-4">
 										<input name="competence" type="text" class="form-control input-md" value="<?= $ligne_competence['competence']; ?>">
 										<input name="id_competence" hidden value="<?= $ligne_competence['id_competence']; ?>">
@@ -103,7 +103,7 @@ $ligne_competence = $sql->fetch(); //
 
 								<!-- Text input-->
 								<div class="form-group">
-									<label class="col-md-4 control-label" for="intitule">niveau</label>
+									<label class="col-md-4 control-label" for="intitule">Niveau</label>
 									<div class="col-md-4">
 										<input name="niveau" type="text" class="form-control input-md" value="<?= $ligne_competence['niveau']; ?>">
 									</div>
