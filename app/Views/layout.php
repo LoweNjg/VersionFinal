@@ -58,17 +58,20 @@ $utilisateurs = \ORM::for_table('t_utilisateurs')->where('id_utilisateur','1')->
 
             <!-- jQuery -->
             <script src="<?= $this->assetUrl('js/jquery.js'); ?>"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
             <!-- Bootstrap Core JavaScript -->
             <script src="<?= $this->assetUrl('js/bootstrap.min.js'); ?>"></script>
 
             <!-- Plugin JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
 
             <script src="<?= $this->assetUrl('js/grayscale.min.js'); ?>"></script>
             <script src="<?= $this->assetUrl('js/timeline.js'); ?>"></script>
             <script src="<?= $this->assetUrl('js/animation.js'); ?>"></script>
 
+            <script type="text/javascript" src="<?= $this->assetUrl('js/jqBootsrapValidation.js'); ?>"></script>
+            <script type="text/javascript" src="<?= $this->assetUrl('js/contact_me.js'); ?>"></script>
             <script type="text/javascript" src="<?= $this->assetUrl('js/jquery.parallax.js'); ?>"></script>
             <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 
