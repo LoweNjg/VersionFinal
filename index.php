@@ -1,5 +1,5 @@
 <?php
 
-header('location:/public/home');
+header('location:/VersionFinal/public/home');
 
  ?>
